@@ -1,5 +1,26 @@
-// Assignment code here
 
+// generator functions
+function getRandomUpper() {
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  return uppercase[Math.floor(Math.random() * uppercase.length)];
+}
+
+function getRandomLower() {
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  return lowercase[Math.floor(Math.random() * lowercase.length)];
+}
+
+function getRandomNumber() {
+  var number = "1234567890";
+  return number[Math.floor(Math.random() * number.length)];
+}
+
+function getRandomSymbol() {
+  var symbol = "!@#$%^&*()|?/+\`~";
+  return symbol[Math.floor(Math.random() * symbol.length)]
+}
+
+console.log(getRandomNumber())
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
