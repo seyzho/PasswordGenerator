@@ -1,32 +1,31 @@
+// Assignment code here
+var sym = "!@#$%^&*()|?/+\`~";
+var num = "1234567890";
+var lower = "abcdefghijklmnopqrstuvwxyz";
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// generator functions
-function getRandomUpper() {
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  return uppercase[Math.floor(Math.random() * uppercase.length)];
+var uppercaseYN = document.getElementById("upper")
+var lowercaseYN = document.getElementById("lower")
+var numberYN = document.getElementById("num")
+var symbolYN = document.getElementById("sym")
+
+function generatePassword(lower){
+  var pwd = "";
+  for (i = 0; i<10;i++) {
+    pwd += (Math.floor(Math.random() * lower))
+  }
+    console.log(pwd);
 }
-
-function getRandomLower() {
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  return lowercase[Math.floor(Math.random() * lowercase.length)];
-}
-
-function getRandomNumber() {
-  var number = "1234567890";
-  return number[Math.floor(Math.random() * number.length)];
-}
-
-function getRandomSymbol() {
-  var symbol = "!@#$%^&*()|?/+\`~";
-  return symbol[Math.floor(Math.random() * symbol.length)]
-}
-
-console.log(getRandomNumber())
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  var characters = lower;
+  window.confirm("would you like lowercase letters?") ? lower -= lower : "";
+  window.confirm("would you like uppercase letters?") ? lower += upper : "";
+  window.confirm("would you like numbers?") ? lower += num : "";
+  window.confirm("would you like symbols?") ? lower += sym : "";
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -35,4 +34,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
